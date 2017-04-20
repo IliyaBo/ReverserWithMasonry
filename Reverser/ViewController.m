@@ -51,7 +51,7 @@ const NSString *SBDGreetingMessage = @"Hello";
     }];
     
     
-    self.sourceStringField = [[UITextField alloc] initWithFrame:CGRectMake(45, 30, 200, 40)];
+    self.sourceStringField = [UITextField new];
     self.sourceStringField.textColor = [UIColor colorWithRed:0/256.0 green:84/256.0 blue:129/256.0 alpha:1.0];
     self.sourceStringField.font = [UIFont fontWithName:@"Helvetica-Bold" size:25];
     self.sourceStringField.backgroundColor=[UIColor whiteColor];
@@ -74,7 +74,7 @@ const NSString *SBDGreetingMessage = @"Hello";
                action:@selector(reverse:)
      forControlEvents:UIControlEventTouchUpInside];
     [self.reverseButton setTitle:@"Reverse" forState:UIControlStateNormal];
-    self.reverseButton.frame = CGRectMake(80.0, 210.0, 160.0, 40.0);
+    //self.reverseButton.frame = CGRectMake(80.0, 210.0, 160.0, 40.0);
     self.reverseButton.backgroundColor = [UIColor grayColor];
     
     [self.view addSubview:self.reverseButton];
@@ -87,6 +87,7 @@ const NSString *SBDGreetingMessage = @"Hello";
         make.width.equalTo(@90);
 //        make.bottom.equalTo(self.resultLabel.mas_top);
     }];
+    //через фреймы не надо делать
 
     
 }
