@@ -17,9 +17,9 @@ const NSString *SBDGreetingMessage = @"Hello";
 @interface ViewController ()<UITextFieldDelegate>
 
 @property(nonatomic, strong) UILabel *greetingLabel;
-@property(nonatomic, weak) IBOutlet UITextField *sourceStringField;
+@property(nonatomic, strong) UITextField *sourceStringField;
 @property(nonatomic, weak) IBOutlet UILabel *resultLabel;
-@property(nonatomic, weak) IBOutlet UIButton *reverseButton;
+@property(nonatomic, strong) IBOutlet UIButton *reverseButton;
 @property(nonatomic, weak) IBOutlet UIButton *uppercaseButton;
 
 @end
@@ -47,8 +47,47 @@ const NSString *SBDGreetingMessage = @"Hello";
         make.top.equalTo(self.view.mas_top).with.offset(40);
         make.height.equalTo(@20);
         make.width.lessThanOrEqualTo(@40);
-        make.bottom.equalTo(self.sourceStringField.mas_top);
+        make.bottom.equalTo(self.resultLabel.mas_top);
     }];
+    
+    
+    self.sourceStringField = [[UITextField alloc] initWithFrame:CGRectMake(45, 30, 200, 40)];
+    self.sourceStringField.textColor = [UIColor colorWithRed:0/256.0 green:84/256.0 blue:129/256.0 alpha:1.0];
+    self.sourceStringField.font = [UIFont fontWithName:@"Helvetica-Bold" size:25];
+    self.sourceStringField.backgroundColor=[UIColor whiteColor];
+    self.sourceStringField.text=@"";
+    
+    [self.view addSubview:self.sourceStringField];
+
+    
+    [self.sourceStringField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.centerY.equalTo(self.view.mas_centerY).with.offset(-40);
+        //make.top.equalTo(self.view.mas_top).with.offset(86);
+        make.height.equalTo(@40);
+        make.width.equalTo(@180);
+//        make.bottom.equalTo(self.resultLabel.mas_top);
+    }];
+    
+    self.reverseButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.reverseButton addTarget:self
+               action:@selector(reverse:)
+     forControlEvents:UIControlEventTouchUpInside];
+    [self.reverseButton setTitle:@"Reverse" forState:UIControlStateNormal];
+    self.reverseButton.frame = CGRectMake(80.0, 210.0, 160.0, 40.0);
+    self.reverseButton.backgroundColor = [UIColor grayColor];
+    
+    [self.view addSubview:self.reverseButton];
+    
+    [self.reverseButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.centerY.equalTo(self.view.mas_centerY).with.offset(40);
+//        make.top.equalTo(self.view.mas_top).with.offset(86);
+        make.height.equalTo(@90);
+        make.width.equalTo(@90);
+//        make.bottom.equalTo(self.resultLabel.mas_top);
+    }];
+
     
 }
 

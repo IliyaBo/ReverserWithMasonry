@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -28,31 +28,6 @@
                                 <color key="textColor" red="0.99991005659999999" green="1" blue="0.99987798930000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter string" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hIJ-g9-DJx">
-                                <rect key="frame" x="16" y="130" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="5fC-ZO-C1p"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crz-uS-9al">
-                                <rect key="frame" x="142" y="497" width="90" height="90"/>
-                                <color key="backgroundColor" red="0.33077373031634916" green="0.93369494818652854" blue="0.63990546719339925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="cPA-cg-cN6"/>
-                                    <constraint firstAttribute="width" constant="90" id="q3M-JL-okY"/>
-                                </constraints>
-                                <state key="normal" title="REVERSE">
-                                    <color key="titleColor" red="0.99991005659999999" green="1" blue="0.99987798930000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="reverse:" destination="BYZ-38-t0r" eventType="touchDown" id="00L-Rd-sre"/>
-                                    <action selector="reverse:" destination="BYZ-38-t0r" eventType="touchDownRepeat" id="KmS-ss-Evh"/>
-                                    <action selector="reverse:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s4E-Pc-awf"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOK-h6-Ww9">
                                 <rect key="frame" x="162" y="415" width="50" height="30"/>
                                 <state key="normal" title="upcase"/>
@@ -66,22 +41,14 @@
                         <color key="backgroundColor" red="0.16440165039999999" green="0.87371301649999999" blue="0.41516798729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8mR-rf-294" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1Q7-fT-au7"/>
-                            <constraint firstItem="hIJ-g9-DJx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="O7M-hW-x7m"/>
-                            <constraint firstItem="crz-uS-9al" firstAttribute="top" secondItem="nOK-h6-Ww9" secondAttribute="bottom" constant="30" id="Os6-D5-d8A"/>
                             <constraint firstItem="8mR-rf-294" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="64" id="TX3-cg-Cc6"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="crz-uS-9al" secondAttribute="bottom" constant="80" id="YHh-ze-xf4"/>
                             <constraint firstItem="nOK-h6-Ww9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="a6j-v8-UVt"/>
-                            <constraint firstItem="crz-uS-9al" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hiV-60-S6J"/>
-                            <constraint firstItem="hIJ-g9-DJx" firstAttribute="top" secondItem="8mR-rf-294" secondAttribute="bottom" constant="46" id="kVV-FI-WjF"/>
-                            <constraint firstItem="hIJ-g9-DJx" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="rTx-y4-m2T"/>
                             <constraint firstItem="8mR-rf-294" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="tCk-B9-Dte"/>
                             <constraint firstItem="nOK-h6-Ww9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="v5c-Wb-mwR"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="resultLabel" destination="8mR-rf-294" id="Cfb-7G-0MN"/>
-                        <outlet property="reverseButton" destination="crz-uS-9al" id="X3O-Mk-bFM"/>
-                        <outlet property="sourceStringField" destination="hIJ-g9-DJx" id="i4d-KH-EXP"/>
                         <outlet property="uppercaseButton" destination="nOK-h6-Ww9" id="8mE-Oc-Ca6"/>
                     </connections>
                 </viewController>
